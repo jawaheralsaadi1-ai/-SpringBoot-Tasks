@@ -17,4 +17,8 @@ public class BookController {
         return "Book added successfully!";
     }
 
+    @GetMapping("/all-books")
+    public List<Book> getAllBooks() {
+        return bookShelf;
+    }
 }
