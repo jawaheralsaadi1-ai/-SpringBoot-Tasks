@@ -10,19 +10,19 @@ import java.util.List;
 public class BookController {
 
     private static List<Book> bookShelf = new ArrayList<Book>();
-    @GetMapping("/add-book")
+    @GetMapping("/addBook")
     public String addBook(@RequestParam int id, @RequestParam String name) {
         Book book = new Book(id, name);
         bookShelf.add(book);
         return "Book added successfully!";
     }
 
-    @GetMapping("/all-books")
+    @GetMapping("/allBooks")
     public List<Book> getAllBooks() {
         return bookShelf;
     }
 
-    @GetMapping("/find-by-id")
+    @GetMapping("/findById")
     public Book findById(@RequestParam int id) {
         for (Book b : bookShelf) {
             if (b.getId() == id) {
@@ -31,7 +31,7 @@ public class BookController {
         }
         return null;
     }
-    @GetMapping("/find-by-name")
+    @GetMapping("/findByName")
     public Book findByName(@RequestParam String name) {
         for (Book b : bookShelf) {
             if (b.getName().equalsIgnoreCase(name)) {
