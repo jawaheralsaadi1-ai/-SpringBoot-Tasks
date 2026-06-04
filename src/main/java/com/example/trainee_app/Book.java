@@ -6,10 +6,10 @@ public class Book {
 
         private int id;
         private String name;
-        private String authorId;// New field
+        private int authorId;// New field
 
         //  constructorg
-        public Book(int id, String name, String authorId) {
+        public Book(int id, String name, int authorId) {
             this.id = id;
             this.name = name;
             this.authorId = authorId;// Updated
@@ -32,11 +32,11 @@ public class Book {
             this.name = name;
         }
 
-    public String getAuthorId() {
+    public int getAuthorId() {
         return authorId;
     }
 
-    public void setAuthorId(String authorId) {
+    public void setAuthorId(int authorId) {
         this.authorId = authorId;
     }
 }
