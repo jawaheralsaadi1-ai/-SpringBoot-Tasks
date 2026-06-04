@@ -41,4 +41,39 @@ public class LibraryController {
             return "Error: Author registry failed. No author found with ID " + authorId + ". Book not saved.";
         }
     }
+
+    @GetMapping("/authorReport")
+    public String getAuthorReport(@RequestParam String authorName) {
+        Author foundAuthor = null;
+
+        //  get the Author
+        for (Author a : authorList) {
+            if (a.getName().equalsIgnoreCase(authorName)) {
+                foundAuthor = a;
+                break;
+            }
+        }
+
+        if (foundAuthor == null) {
+            return "Error: Author '" + authorName + "' not found in our records.";
+        }
+
+        // get all books belonging to this author
+        String booksWritten = "";
+        for (Book b : bookList) {
+            if (b.getAuthorId() == foundAuthor.getId()) {
+                booksWritten += "- " + b.getName() + " ";
+            }
+        }
+
+        if (booksWritten.equals("")) {
+            booksWritten = "None";
+        }
+
+        // final report
+        return "--- Author Report --- " +
+                "Name: " + foundAuthor.getName() + " | " +
+                "Bio: " + foundAuthor.getBiography() + " | " +
+                "Books Written: " + booksWritten;
+    }
 }
