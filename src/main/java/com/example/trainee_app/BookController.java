@@ -1,3 +1,4 @@
+/*
 package com.example.trainee_app;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,3 +51,4 @@ public class BookController {
         return "Sorry, that book ID is not available.";
     }
 }
+*/
