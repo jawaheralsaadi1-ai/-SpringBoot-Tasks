@@ -29,5 +29,17 @@ public class UpdateDemoOOP {
         System.out.println("Grade        : " + student.getGrade());
         System.out.println("----------------------------");
 
+        //  Verify — unchanged fields stay the same
+        System.out.println("\nVerification:");
+        System.out.println("Student ID is unchanged : " + student.getStudentId());
+        System.out.println("Grade is unchanged      : " + student.getGrade());
+        System.out.println("Name was updated        : " + student.getStudentName());
+
+        // Result
+        System.out.println("\nResult");
+        System.out.println("Only the student name is updated.\n"+
+                "Student ID and grade remain unchanged.\n"+
+                "The update is performed through a setter method rather than direct field access.");
+
     }
 }
