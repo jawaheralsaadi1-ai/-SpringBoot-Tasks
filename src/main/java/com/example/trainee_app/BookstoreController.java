@@ -16,7 +16,7 @@ public class BookstoreController {
     private static final List<InventoryBook> catalog = new ArrayList<>();
 
    // Mapping : GET endpoint
-    @GetMapping("/add-book")//   //Web Path: /add-book
+    @GetMapping("/addBook")//   //Web Path: /add-book
     public String addBook(
             @RequestParam int id,
             @RequestParam String title,
@@ -31,5 +31,10 @@ public class BookstoreController {
 
         //  Return a confirmation message.
         return "Success: The book '" + title + "' (ID: " + id + ") has been successfully added to the bookstore's catalog.";
+    }
+    // Optional endpoint to review all books added
+    @GetMapping("/viewCatalog")
+    public List<InventoryBook> viewCatalog() {
+        return catalog;
     }
 }
