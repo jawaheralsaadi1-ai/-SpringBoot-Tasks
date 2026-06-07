@@ -13,7 +13,7 @@ public class StudentController {
 
     //  PUT endpoint at /update-student
     @PutMapping("/updateStudent")
-    public void updateStudent(@RequestParam String name) {
+    public String updateStudent(@RequestParam String name) {
 
         // Retrieve current value before update
         String previousName = student.getStudentName();
@@ -22,6 +22,11 @@ public class StudentController {
         // Update the field using setter method
         student.setStudentName(name);
 
-
+        // Return confirmation response
+        return "Student name updated successfully.\n"
+                + "Previous Name : " + previousName + "\n"
+                + "New Name      : " + student.getStudentName();
     }
 }
+
+
