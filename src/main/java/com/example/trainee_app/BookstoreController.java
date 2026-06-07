@@ -52,8 +52,35 @@ public class BookstoreController {
                  return "Sold Out: '" + book.getTitle() + "' is currently out of stock.";
 
              }
-
          }
        }
         return "Not Found: The bookstore does not carry a title matching ID " + id + ".";    }
+
+    @GetMapping("/recordReport")
+    // Use a request parameter to get the target book ID.
+    public String generateReorderReport(@RequestParam int threshold) {
+        //  Initialize a string accumulator
+        StringBuilder reportBuilder = new StringBuilder();
+        boolean hasLowStockBooks = false;
+
+        // Loop through list
+        for (InventoryBook book : catalog) {
+            // Compare each book's stock count with threshold
+            if (book.getStockCount() <= threshold) {
+                //  For every matching book, append the title and stock number
+                reportBuilder.append("Title: ").append(book.getTitle())
+                        .append(" | Stock Left: ").append(book.getStockCount())
+                        .append("\n");
+                hasLowStockBooks = true;
+            }
+        }
+         //If no books meet the low-stock condition
+        if (!hasLowStockBooks) {
+            return "All stable! No books currently need reordering.";
+        }
+
+        // Return the complete report to the browser
+        return reportBuilder.toString();
+    }
 }
+
