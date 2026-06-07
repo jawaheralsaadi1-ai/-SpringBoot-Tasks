@@ -18,5 +18,10 @@ public class StudentController {
         // Retrieve current value before update
         String previousName = student.getStudentName();
 
+
+        // Update the field using setter method
+        student.setStudentName(name);
+
+
     }
 }
