@@ -37,7 +37,7 @@ public class UpdateDemo {
             System.out.println("The student name remains \"" + currentStudentName + "\".");
         }
 
-        // Steps 8-9: Always print final name and status AFTER the if-else block
+        // Display the results
         System.out.println("\n--- Final State ---");
         System.out.println("Student Name  : " + currentStudentName);
         System.out.println("Update Status : " + updateStatus);
