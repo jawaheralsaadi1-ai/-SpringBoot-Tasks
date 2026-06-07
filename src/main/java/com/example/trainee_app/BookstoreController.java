@@ -2,6 +2,7 @@ package com.example.trainee_app;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
@@ -37,4 +38,22 @@ public class BookstoreController {
     public List<InventoryBook> viewCatalog() {
         return catalog;
     }
+    @GetMapping("/checkStock")
+    // Use a request parameter to get the target book ID.
+    public String checkStock(@RequestParam int id) {
+        //Loop through to find the matching book.
+       for(InventoryBook book : catalog) {
+         if(book.getBookId() == id) {
+             if(book.getStockCount() > 0){
+                 return "Success: '" +  book.getTitle()  + "' is available! Price: $"
+                         + book.getPrice() + " | Units remaining: " + book.getStockCount();
+
+             } else{
+                 return "Sold Out: '" + book.getTitle() + "' is currently out of stock.";
+
+             }
+
+         }
+       }
+        return "Not Found: The bookstore does not carry a title matching ID " + id + ".";    }
 }
