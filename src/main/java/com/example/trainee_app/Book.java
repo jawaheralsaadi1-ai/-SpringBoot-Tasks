@@ -6,11 +6,13 @@ public class Book {
 
         private int id;
         private String name;
+        private int authorId;// New field
 
         //  constructorg
-        public Book(int id, String name) {
+        public Book(int id, String name, int authorId) {
             this.id = id;
             this.name = name;
+            this.authorId = authorId;// Updated
         }
 
         // Getter &  Setter
@@ -29,4 +31,12 @@ public class Book {
         public void setName(String name) {
             this.name = name;
         }
+
+    public int getAuthorId() {
+        return authorId;
     }
+
+    public void setAuthorId(int authorId) {
+        this.authorId = authorId;
+    }
+}

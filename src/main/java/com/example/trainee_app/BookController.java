@@ -1,3 +1,4 @@
+/*
 package com.example.trainee_app;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,4 +41,14 @@ public class BookController {
         }
         return null;
     }
+    @GetMapping("/search-msg")
+    public String searchMsg(@RequestParam int id) {
+        for (Book b : bookShelf) {
+            if (b.getId() == id) {
+                return "Found: " + b.getName();
+            }
+        }
+        return "Sorry, that book ID is not available.";
+    }
 }
+*/
