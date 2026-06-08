@@ -17,4 +17,10 @@ public class Product {
     public int getId() {return id;}
     public String getName() {return name;}
     public int getStockQuantity() {return stockQuantity;}
+
+    //setter methods for id, name and stockQuantity
+    public void setId(int id) {this.id = id;}
+    public void setName(String name) {this.name = name;}
+    public void setStockQuantity(int stockQuantity) {
+        this.stockQuantity = stockQuantity;}
 }
