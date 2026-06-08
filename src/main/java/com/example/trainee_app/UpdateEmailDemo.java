@@ -18,8 +18,10 @@ public class UpdateEmailDemo {
 
         // Compare two email address using -equalsIgnoreCase()-
         if(!currentEmailAddress.equalsIgnoreCase(newEmailAddress)) {
-
+            isUpdated = true; // If emails different
         } else {
+            isUpdated = false; // If emails the same
+
 
         }
 
