@@ -24,6 +24,25 @@ public class OrderController {
                               @RequestParam String address,
                               @RequestParam String status) {
 
-        return address;
+        // Check if order exists in the HashMap
+        if (!orderMap.containsKey(orderId)) {
+            return "Order not found.";
+        }
+
+        // Retrieve order and save previous values before update
+        Order  order           = orderMap.get(orderId);
+        String previousAddress = order.getShippingAddress();
+        String previousStatus  = order.getOrderStatus();
+
+        // Update both fields using setter methods
+        order.setShippingAddress(address);
+        order.setOrderStatus(status);
+
+        return "Order Updated Successfully\n"
+                + "Order ID                 : " + order.getOrderId()         + "\n"
+                + "Previous Shipping Address: " + previousAddress            + "\n"
+                + "Updated Shipping Address : " + order.getShippingAddress() + "\n"
+                + "Previous Order Status    : " + previousStatus             + "\n"
+                + "Updated Order Status     : " + order.getOrderStatus();
     }
 }
