@@ -9,4 +9,12 @@ public class ProductController {
     // Store product data using HashMap
     private HashMap<Integer, Product> productMap = new HashMap<>();
 
+    // Preload sample product data
+    public ProductController() {
+        productMap.put(1, new Product(1, "Laptop",  10));
+        productMap.put(2, new Product(2, "Monitor", 25));
+        productMap.put(3, new Product(3, "Keyboard", 50));
+    }
+
+
 }
