@@ -24,6 +24,20 @@ public class ProductController {
     //Configure the method
     public String updateStock(@PathVariable int id,
                               @RequestParam int quantity) {
-        return "";
+        // Check if product exists in the HashMap
+        if (!productMap.containsKey(id)) {
+            return "Product not found.";
+        }
+        // Retrieve product and save previous stock before update
+        Product product = productMap.get(id);
+        int previousStock = product.getStockQuantity();
+
+        // Update only the stockQuantity field using setter method
+        product.setStockQuantity(quantity);
+
+        return "Product Updated Successfully\n"
+                + "Product Name  : " + product.getName() + "\n"
+                + "Previous Stock: " + previousStock + "\n"
+                + "Updated Stock : " + product.getStockQuantity();
     }
 }
