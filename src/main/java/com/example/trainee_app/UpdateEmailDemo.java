@@ -16,5 +16,13 @@ public class UpdateEmailDemo {
         System.out.println("New Email Address: " + newEmailAddress);
         System.out.println("---------------------------");
 
+        // Compare two email address using -equalsIgnoreCase()-
+        if(!currentEmailAddress.equalsIgnoreCase(newEmailAddress)) {
+
+        } else {
+
+        }
+
+
     }
 }
