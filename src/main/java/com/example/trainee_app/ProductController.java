@@ -20,7 +20,7 @@ public class ProductController {
     }
 
     // PUT endpoint
-    @PutMapping("/updateStock{Id}")
+    @PutMapping("/updateStock/{id}")
     //Configure the method
     public String updateStock(@PathVariable int id,
                               @RequestParam int quantity) {
