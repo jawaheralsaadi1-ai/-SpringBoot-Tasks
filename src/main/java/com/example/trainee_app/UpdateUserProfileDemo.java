@@ -12,6 +12,14 @@ public class UpdateUserProfileDemo {
         System.out.println("Phone Number : " + profile1.getPhoneNumber());
         System.out.println("Address      : " + profile1.getAddress());
         System.out.println("----------------------------");
-    }
+
+        // Save old values before update
+        String oldPhone1 = profile1.getPhoneNumber();
+        String oldAddress1 = profile1.getAddress();
+
+       // Perform update via setter methods
+        profile1.setPhoneNumber("+968 11111");
+        profile1.setAddress("Ruwi, Muscat");
 
     }
+}
