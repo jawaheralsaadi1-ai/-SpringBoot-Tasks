@@ -25,4 +25,17 @@ public class Order {
     public String getOrderStatus() {
         return orderStatus;
     }
+
+   // Setter methods — controlled update access
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
 }
