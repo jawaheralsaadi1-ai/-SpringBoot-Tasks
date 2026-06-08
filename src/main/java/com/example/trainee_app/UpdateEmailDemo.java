@@ -18,9 +18,19 @@ public class UpdateEmailDemo {
 
         // Compare two email address using -equalsIgnoreCase()-
         if(!currentEmailAddress.equalsIgnoreCase(newEmailAddress)) {
-            isUpdated = true; // If emails different
+            isUpdated = true; // if the email are different
+            System.out.println("Original Email: " + currentEmailAddress);
+            System.out.println("\nEmail updated successfully.");
+            System.out.println("\nUpdate Email: " + newEmailAddress);
+            System.out.println("\nUpdate Status " + isUpdated);
+
+
         } else {
-            isUpdated = false; // If emails the same
+            isUpdated = false;// If the email are same
+            System.out.println("Original Email: " + currentEmailAddress);
+            System.out.println("\nNo update required. Email address is already current.");
+            System.out.println("\nUpdate Email: " + newEmailAddress);
+            System.out.println("\nUpdate Status " + isUpdated);
 
 
         }
