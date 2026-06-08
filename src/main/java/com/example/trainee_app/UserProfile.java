@@ -8,5 +8,11 @@ public class UserProfile {
     private String phoneNumber;
     private String address;
 
+    // Constructor to initialize all fields
+    public UserProfile(int userID, String phoneNumber, String address) {
+        this.userID = userID;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
 
 }
