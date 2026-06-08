@@ -3,7 +3,14 @@ package com.example.trainee_app;
 public class Order {
 
     //Declaring Variables
-    private int    orderId;
+    private int orderId;
     private String shippingAddress;
     private String orderStatus;
+
+    //Constructor
+    public Order(int orderId, String shippingAddress, String orderStatus) {
+        this.orderId = orderId;
+        this.shippingAddress = shippingAddress;
+        this.orderStatus = orderStatus;
+    }
 }
