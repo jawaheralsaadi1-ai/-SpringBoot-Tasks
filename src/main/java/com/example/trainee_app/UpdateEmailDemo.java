@@ -5,8 +5,8 @@ public class UpdateEmailDemo {
     public static void main(String[] args) {
 
         //Declaring Variables
-        String currentEmailAddress = "ahmed@example.com";
-        String newEmailAddress = "ali@example.com";
+        String currentEmailAddress = "Ahmed@example.com";
+        String newEmailAddress = "ahmed@example.com";
         boolean isUpdated = false;
 
 
@@ -19,18 +19,20 @@ public class UpdateEmailDemo {
         // Compare two email address using -equalsIgnoreCase()-
         if(!currentEmailAddress.equalsIgnoreCase(newEmailAddress)) {
             isUpdated = true; // if the email are different
+            System.out.println("---  Update is required---");
             System.out.println("Original Email: " + currentEmailAddress);
-            System.out.println("\nEmail updated successfully.");
-            System.out.println("\nUpdate Email: " + newEmailAddress);
-            System.out.println("\nUpdate Status " + isUpdated);
+            System.out.println("Email updated successfully.");
+            System.out.println("Update Email: " + newEmailAddress);
+            System.out.println("Update Status " + isUpdated);
 
 
         } else {
             isUpdated = false;// If the email are same
+            System.out.println("---No update is required---");
             System.out.println("Original Email: " + currentEmailAddress);
-            System.out.println("\nNo update required. Email address is already current.");
-            System.out.println("\nUpdate Email: " + newEmailAddress);
-            System.out.println("\nUpdate Status " + isUpdated);
+            System.out.println("No update required. Email address is already current.");
+            System.out.println("Update Email: " + newEmailAddress);
+            System.out.println("Update Status " + isUpdated);
 
 
         }
