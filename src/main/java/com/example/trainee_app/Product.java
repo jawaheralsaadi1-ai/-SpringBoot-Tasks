@@ -13,5 +13,8 @@ public class Product {
         this.name = name;
         this.stockQuantity = stockQuantity;
     }
-
+    // getter methods for id, name and stockQuantity
+    public int getId() {return id;}
+    public String getName() {return name;}
+    public int getStockQuantity() {return stockQuantity;}
 }
