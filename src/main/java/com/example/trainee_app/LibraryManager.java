@@ -13,4 +13,21 @@ public class LibraryManager {
         members.add(new LibraryMember("M102", "Sara", "Premium"));
         members.add(new LibraryMember("M103", "John", "Standard"));
     }
+
+    // Add a new member to the collection
+    public void addMember(LibraryMember member) {
+        members.add(member);
+    }
+    // Display all members in the collection
+    public void displayMembers() {
+        if (members.isEmpty()) {
+            System.out.println("  No members found.");
+            return;
+        }
+        for (LibraryMember member : members) {
+            System.out.println("  - " + member.getMemberId()
+                    + " → " + member.getFullName()
+                    + " → " + member.getMembersshipType());
+        }
+    }
 }
