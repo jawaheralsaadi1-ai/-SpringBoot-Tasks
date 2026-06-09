@@ -13,4 +13,16 @@ public class Product {
         this.productName = productName;
         this.price = price;
     }
+    // Getter methods
+    public int getProductId() {
+        return productId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public double getPrice() {
+        return price;
+    }
 }
