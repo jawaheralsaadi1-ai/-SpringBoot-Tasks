@@ -36,7 +36,10 @@ public class DeleteTaskDemo {
         } else {
             System.out.println("\nTask not found. No deletion performed.");
         }
-
-
+        // Display final task list
+        System.out.println("\n--- Final Task List ---");
+        for (String task : tasks1) {
+            System.out.println("  - " + task);
+        }
     }
 }
