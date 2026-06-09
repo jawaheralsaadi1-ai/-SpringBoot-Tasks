@@ -1,4 +1,4 @@
-package com.example.trainee_app;
+package com.example.trainee_app.entities;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -33,7 +33,7 @@ public class LibraryManager {
     }
 
         // Delete a member safely using iterator
-        boolean deleteMemberById(String memberId){
+        public boolean deleteMemberById(String memberId){
             Iterator<LibraryMember> iterator = members.iterator();
 
             while (iterator.hasNext()) {

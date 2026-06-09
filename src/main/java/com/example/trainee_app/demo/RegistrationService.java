@@ -1,5 +1,6 @@
-package com.example.trainee_app;
+package com.example.trainee_app.demo;
 
+import com.example.trainee_app.entities.EventRegistration;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
