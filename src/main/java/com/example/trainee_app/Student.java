@@ -20,25 +20,23 @@ package com.example.trainee_app;
         public int getStudentId() {
             return studentId;
         }
-
         public String getStudentName() {
             return studentName;
         }
-
         public String getGrade() {
             return grade;
         }
 
         //  Setter methods — allow controlled update access (PUT-style)
+
         public void setStudentName(String studentName) {
             this.studentName = studentName;
         }
-
         public void setGrade(String grade) {
             this.grade = grade;
         }
-        public void setStudentId(int studentId) {
+        public void setStudentId(int studentId) {this.studentId = studentId;}
 
-        }
+
     }
 
