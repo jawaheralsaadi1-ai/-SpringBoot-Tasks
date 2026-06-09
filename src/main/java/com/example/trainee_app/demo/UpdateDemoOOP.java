@@ -1,4 +1,6 @@
-package com.example.trainee_app;
+package com.example.trainee_app.demo;
+
+import com.example.trainee_app.entities.Student;
 
 public class UpdateDemoOOP {
 
