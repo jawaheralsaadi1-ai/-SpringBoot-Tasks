@@ -1,6 +1,7 @@
 package com.example.trainee_app;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class LibraryManager {
 
@@ -30,4 +31,21 @@ public class LibraryManager {
                     + " → " + member.getMembersshipType());
         }
     }
-}
+
+        // Delete a member safely using iterator
+        boolean deleteMemberById(String memberId){
+            Iterator<LibraryMember> iterator = members.iterator();
+
+            while (iterator.hasNext()) {
+                LibraryMember member = iterator.next();
+
+                if (member.getMemberId().equalsIgnoreCase(memberId)) {
+                    iterator.remove();
+                    System.out.println("Member " + memberId + " removed successfully.");
+                    return true;
+                }
+            }
+            System.out.println("No matching member found with ID: " + memberId);
+            return false;
+        }
+    }
