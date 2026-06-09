@@ -10,5 +10,12 @@ public class DeleteTaskDemo {
                     tasks1.add("Buy groceries");
                     tasks1.add("Call doctor");
                     tasks1.add("Finish report");
- }
+
+        // Display initial task list before deletion
+        System.out.println("\n--- Initial Task List ---");
+        for (String task : tasks1) {
+            System.out.println("  - " + task);
+        }
+
+    }
 }
