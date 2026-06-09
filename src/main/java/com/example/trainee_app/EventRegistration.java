@@ -11,4 +11,12 @@ public class EventRegistration {
         this.registrationId = registrationId;
         this.attendeeName = attendeeName;
     }
+    //Getter methods
+    public int getRegistrationId() {
+        return registrationId;
+    }
+
+    public String getAttendeeName() {
+        return attendeeName;
+    }
 }
