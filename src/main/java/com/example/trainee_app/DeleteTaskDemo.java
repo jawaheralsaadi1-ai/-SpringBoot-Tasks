@@ -16,6 +16,11 @@ public class DeleteTaskDemo {
         for (String task : tasks1) {
             System.out.println("  - " + task);
         }
+        // Define target task to delete
+        String targetTask1 = "Call doctor";
+        boolean isDeleted1 = false;
+
+        System.out.println("\nTarget Task : \"" + targetTask1 + "\"");
 
     }
 }
