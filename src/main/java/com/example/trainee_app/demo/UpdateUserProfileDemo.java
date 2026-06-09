@@ -1,4 +1,6 @@
-package com.example.trainee_app;
+package com.example.trainee_app.demo;
+
+import com.example.trainee_app.entities.UserProfile;
 
 public class UpdateUserProfileDemo {
     public static void main(String[] args) {

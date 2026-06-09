@@ -1,17 +1,18 @@
-package com.example.trainee_app;
+package com.example.trainee_app.controller;
 
+import com.example.trainee_app.entities.Product;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 @RestController
 public class ProductController {
 
     // Store database using HashMap
-    private HashMap<Integer, Product> productMap = new HashMap<>();
+    private ConcurrentHashMap<Integer, Product> productMap = new ConcurrentHashMap<>();
 
     // Preload sample data
     public ProductController() {

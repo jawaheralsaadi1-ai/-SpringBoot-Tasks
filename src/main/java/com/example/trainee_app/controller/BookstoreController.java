@@ -1,13 +1,13 @@
-package com.example.trainee_app;
+package com.example.trainee_app.controller;
 
 
+import com.example.trainee_app.entities.InventoryBook;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 
 @RestController
@@ -17,7 +17,7 @@ public class BookstoreController {
     private static final List<InventoryBook> catalog = new ArrayList<>();
 
    // Mapping : GET endpoint
-    @GetMapping("/addBook")//   //Web Path: /add-book
+    @PostMapping("/addBook")//   //Web Path: /add-book
     public String addBook(
             @RequestParam int id,
             @RequestParam String title,

@@ -1,17 +1,17 @@
-package com.example.trainee_app;
+package com.example.trainee_app.controller;
 
+import com.example.trainee_app.entities.Order;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 @RestController
 public class OrderController {
     //  storage a  database using HashMap
-    private HashMap<Integer, Order> orderMap = new HashMap<>();
-
+    private ConcurrentHashMap<Integer, Order> orderMap = new ConcurrentHashMap<>();
     // Preload sample data
     public OrderController() {
         orderMap.put(101, new Order(101, "Muscat", "Pending"));
