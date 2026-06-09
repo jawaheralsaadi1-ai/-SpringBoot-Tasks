@@ -41,11 +41,9 @@ public class LibraryManager {
 
                 if (member.getMemberId().equalsIgnoreCase(memberId)) {
                     iterator.remove();
-                    System.out.println("Member " + memberId + " removed successfully.");
                     return true;
                 }
             }
-            System.out.println("No matching member found with ID: " + memberId);
             return false;
         }
     }
