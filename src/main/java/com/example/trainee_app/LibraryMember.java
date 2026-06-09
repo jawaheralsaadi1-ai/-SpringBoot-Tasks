@@ -12,8 +12,7 @@ public class LibraryMember {
         this.fullName = fullName;
         this.membersshipType = membersshipType;
     }
-    // Getter methods for all fields
-
+    // Getter methods - safe read access from outside the class
     public String getMemberId() {
         return memberId;
     }
