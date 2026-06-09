@@ -25,4 +25,18 @@ public class Product {
     public double getPrice() {
         return price;
     }
+
+    // Setter methods
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }
