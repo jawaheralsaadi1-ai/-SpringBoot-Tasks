@@ -7,4 +7,10 @@ public class Product {
     private String productName;
     private double price;
 
+    // Constructor (to initialize all fields)
+    public Product(int productId, String productName, double price) {
+        this.productId = productId;
+        this.productName = productName;
+        this.price = price;
+    }
 }
