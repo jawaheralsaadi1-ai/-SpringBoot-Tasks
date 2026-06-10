@@ -16,6 +16,14 @@ public class AddVehicleDemo {
                 + " → " + newVehicle1.getVehicleModel()
                 + " → " + newVehicle1.getRentalPricePerDay() + " OMR/day");
 
+    // Perform POST operation via manager
+        System.out.println("\n" + manager1.addVehicle(newVehicle1));
+
+        // Display updated vehicle list after POST operation
+        System.out.println("\n--- Updated Vehicle List ---");
+        manager1.displayVehicles();
+        System.out.println("----------------------------");
+
 
     }
 }
