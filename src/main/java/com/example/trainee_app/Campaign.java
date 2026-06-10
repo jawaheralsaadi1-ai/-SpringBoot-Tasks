@@ -6,4 +6,12 @@ public class Campaign {
     private String campaignName;
     private String platform;
     private double budget;
+
+    // Constructor - to initialize all fields
+    public Campaign(String campaignId, String campaignName, String platform, double budget) {
+        this.campaignId = campaignId;
+        this.campaignName = campaignName;
+        this.platform = platform;
+        this.budget = budget;
+    }
 }
