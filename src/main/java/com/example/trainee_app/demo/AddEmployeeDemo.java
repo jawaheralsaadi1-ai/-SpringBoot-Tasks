@@ -1,6 +1,5 @@
-package com.example.trainee_app;
+package com.example.trainee_app.demo;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 
 public class AddEmployeeDemo {

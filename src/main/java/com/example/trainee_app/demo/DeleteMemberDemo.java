@@ -1,6 +1,6 @@
 package com.example.trainee_app.demo;
 
-import com.example.trainee_app.entities.LibraryManager;
+import com.example.trainee_app.controller.LibraryManager;
 
 public class DeleteMemberDemo {
     public static void main(String[] args) {

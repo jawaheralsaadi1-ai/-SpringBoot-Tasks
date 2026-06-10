@@ -1,4 +1,7 @@
-package com.example.trainee_app;
+package com.example.trainee_app.demo;
+
+import com.example.trainee_app.entities.Vehicle;
+import com.example.trainee_app.controller.VehicleManager;
 
 public class AddVehicleDemo {
     public static void main(String[] args) {

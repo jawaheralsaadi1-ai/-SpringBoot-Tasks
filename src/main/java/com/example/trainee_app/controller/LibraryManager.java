@@ -1,4 +1,6 @@
-package com.example.trainee_app.entities;
+package com.example.trainee_app.controller;
+
+import com.example.trainee_app.entities.LibraryMember;
 
 import java.util.ArrayList;
 import java.util.Iterator;

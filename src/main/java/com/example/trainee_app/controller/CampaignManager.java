@@ -1,4 +1,6 @@
-package com.example.trainee_app;
+package com.example.trainee_app.controller;
+
+import com.example.trainee_app.entities.Campaign;
 
 import java.util.ArrayList;
 

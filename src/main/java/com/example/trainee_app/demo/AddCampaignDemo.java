@@ -1,4 +1,7 @@
-package com.example.trainee_app;
+package com.example.trainee_app.demo;
+
+import com.example.trainee_app.controller.CampaignManager;
+import com.example.trainee_app.entities.Campaign;
 
 public class AddCampaignDemo {
     public static void main(String[] args) {
