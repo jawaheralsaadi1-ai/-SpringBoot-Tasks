@@ -35,6 +35,21 @@ public class CampaignManager {
                 + "Platform      : " + campaign.getPlatform()     + "\n"
                 + "Budget        : " + campaign.getBudget()       + "\n"
                 + "Status        : Active";
+
     }
 
+    // Display all active campaigns in the collection
+    public void displayCampaigns() {
+        if (campaigns.isEmpty()) {
+            System.out.println("  No campaigns found.");
+            return;
+        }
+        for (Campaign campaign : campaigns) {
+            System.out.println("  - " + campaign.getCampaignId()
+                    + " → " + campaign.getCampaignName()
+                    + " → " + campaign.getPlatform()
+                    + " → " + campaign.getBudget());
+        }
+    }
 }
+
