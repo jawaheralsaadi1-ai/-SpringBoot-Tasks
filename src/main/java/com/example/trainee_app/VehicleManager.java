@@ -49,6 +49,8 @@ public class VehicleManager {
                         + " → " + vehicle.getVehicleModel()
                         + " → "  + vehicle.getRentalPricePerDay() + " OMR/day");
             }
+
+
         }
     }
 
