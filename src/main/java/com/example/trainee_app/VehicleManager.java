@@ -17,4 +17,25 @@ public class VehicleManager {
         vehicles.add(new Vehicle("V103", "Hyundai Elantra",  22));
     }
 
+    //  Create addVehicle method ,
+    public String addVehicle(Vehicle vehicle) {
+
+        // Check if vehicle ID already exists
+        for (Vehicle v : vehicles) {
+            if (v.getVehicleId().equalsIgnoreCase(vehicle.getVehicleId())) {
+                return "Vehicle ID already exists.\n"
+                        + "No vehicle was added.";
+            }
+        }
+
+        // No duplicate found — add vehicle to collection
+        vehicles.add(vehicle);
+
+        return "Vehicle Added Successfully.\n"
+                + "Vehicle ID          : " + vehicle.getVehicleId()         + "\n"
+                + "Vehicle Model       : " + vehicle.getVehicleModel()       + "\n"
+                + "Rental Price Per Day: " + vehicle.getRentalPricePerDay()  + " OMR\n"
+                + "Status              : Created";
+    }
+
 }
