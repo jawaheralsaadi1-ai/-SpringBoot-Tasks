@@ -18,5 +18,15 @@ public class AddEmployeeDemo {
             System.out.println("  - " + emp[0] + " → " + emp[1] + " → " + emp[2]);
         }
         System.out.println("--------------------------");
+
+        // New employee data to add
+        String[] newEmployee1 = {"E104", "Ali", "IT"};
+        System.out.println("\nNew Employee : "
+                + newEmployee1[0] + " → "
+                + newEmployee1[1] + " → "
+                + newEmployee1[2]);
+
+
+
     }
 }
