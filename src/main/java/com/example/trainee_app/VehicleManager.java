@@ -38,4 +38,17 @@ public class VehicleManager {
                 + "Status              : Created";
     }
 
-}
+        // Display all available vehicles in the collection
+        public void displayVehicles() {
+            if (vehicles.isEmpty()) {
+                System.out.println("  No vehicles found.");
+                return;
+            }
+            for (Vehicle vehicle : vehicles) {
+                System.out.println("  - " + vehicle.getVehicleId()
+                        + " → " + vehicle.getVehicleModel()
+                        + " → "  + vehicle.getRentalPricePerDay() + " OMR/day");
+            }
+        }
+    }
+
