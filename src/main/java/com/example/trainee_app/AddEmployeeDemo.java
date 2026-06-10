@@ -36,5 +36,18 @@ public class AddEmployeeDemo {
 
             }
         }
+
+        // Perform POST operation if no duplicate found
+        if (!isDuplicate1) {
+            employees1.add(newEmployee1);
+            System.out.println("\nEmployee Added Successfully.");
+            System.out.println("Employee ID   : " + newEmployee1[0]);
+            System.out.println("Employee Name : " + newEmployee1[1]);
+            System.out.println("Department    : " + newEmployee1[2]);
+            System.out.println("Status        : Created");
+        } else {
+            System.out.println("\nEmployee ID already exists.");
+            System.out.println("No employee was created.");
+        }
     }
 }
