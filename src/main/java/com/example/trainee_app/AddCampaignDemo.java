@@ -9,5 +9,13 @@ public class AddCampaignDemo {
                     manager1.displayCampaigns();
                     System.out.println("--------------------------");
 
-}
+        // Test POST operation — create new campaign and pass to manager
+        Campaign newCampaign1 = new Campaign("C104", "Ramadan Offer", "Facebook Ads", 700);
+        System.out.println("\nNew Campaign : "
+                + newCampaign1.getCampaignId()
+                + " → " + newCampaign1.getCampaignName()
+                + " → " + newCampaign1.getPlatform()
+                + " → " + newCampaign1.getBudget());
+
+    }
 }
