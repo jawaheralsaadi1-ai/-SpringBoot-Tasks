@@ -2,12 +2,12 @@ package com.example.trainee_app;
 
 public class Vehicle {
 
-    private int vehicleId;
+    private String vehicleId;
     private String vehicleModel;
-    private String rentalPricePerDay;
+    private int rentalPricePerDay;
 
     // Constructor - Initialize all fields when object is created
-    public Vehicle(int vehicleId, String vehicleModel, String rentalPricePerDay) {
+    public Vehicle(String vehicleId, String vehicleModel, int rentalPricePerDay) {
         this.vehicleId = vehicleId;
         this.vehicleModel = vehicleModel;
         this.rentalPricePerDay = rentalPricePerDay;
@@ -15,7 +15,7 @@ public class Vehicle {
 
     //Getter methods — safe read access from outside the class
 
-    public int getVehicleId() {
+    public String getVehicleId() {
         return vehicleId;
     }
 
@@ -23,7 +23,7 @@ public class Vehicle {
         return vehicleModel;
     }
 
-    public String getRentalPricePerDay() {
+    public int getRentalPricePerDay() {
         return rentalPricePerDay;
     }
 }
