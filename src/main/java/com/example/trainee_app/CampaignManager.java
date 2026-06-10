@@ -14,4 +14,27 @@ public class CampaignManager {
         campaigns.add(new Campaign("C102", "Black Friday", "Google Ads", 1000));
         campaigns.add(new Campaign("C103", "Email Promo", "Email", 300));
     }
+
+    // Create POST method — validates id, checks duplicate, adds campaign if valid
+    public String addCampaign(Campaign campaign) {
+
+        // Check if campaign ID already exists
+        for (Campaign c : campaigns) {
+            if (c.getCampaignId().equalsIgnoreCase(campaign.getCampaignId())) {
+                return "Campaign ID already exists.\n"
+                        + "No campaign was created.";
+            }
+        }
+
+        // No duplicate found — add campaign to collection
+        campaigns.add(campaign);
+
+        return "Campaign Created Successfully.\n"
+                + "Campaign ID   : " + campaign.getCampaignId()   + "\n"
+                + "Campaign Name : " + campaign.getCampaignName() + "\n"
+                + "Platform      : " + campaign.getPlatform()     + "\n"
+                + "Budget        : " + campaign.getBudget()       + "\n"
+                + "Status        : Active";
+    }
+
 }
