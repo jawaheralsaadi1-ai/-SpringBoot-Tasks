@@ -1,8 +1,16 @@
 package com.example.trainee_app;
 
+import java.util.ArrayList;
+
 public class AddEmployeeDemo {
     public static void main(String[] args) {
 
-
+//
+        // Initialize employee list with sample data
+        ArrayList<String[]> employees1 = new ArrayList<>();//Create  collection to store employee records.
+        employees1.add(new String[]{"E101", "Sara",   "HR"});
+        employees1.add(new String[]{"E102", "Ahmed",  "Finance"});
+        employees1.add(new String[]{"E103", "John",   "Marketing"});
     }
+
 }
