@@ -17,5 +17,13 @@ public class AddCampaignDemo {
                 + " → " + newCampaign1.getPlatform()
                 + " → " + newCampaign1.getBudget());
 
+        // Perform POST operation via manager
+        System.out.println("\n" + manager1.addCampaign(newCampaign1));
+
+        // Display updated campaign list after POST operation
+        System.out.println("\n--- Updated Campaign List ---");
+        manager1.displayCampaigns();
+        System.out.println("-----------------------------");
+
     }
 }
