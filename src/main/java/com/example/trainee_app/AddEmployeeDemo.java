@@ -8,9 +8,15 @@ public class AddEmployeeDemo {
 //
         // Initialize employee list with sample data
         ArrayList<String[]> employees1 = new ArrayList<>();//Create  collection to store employee records.
-        employees1.add(new String[]{"E101", "Sara",   "HR"});
-        employees1.add(new String[]{"E102", "Ahmed",  "Finance"});
-        employees1.add(new String[]{"E103", "John",   "Marketing"});
-    }
+        employees1.add(new String[]{"E101", "Sara", "HR"});
+        employees1.add(new String[]{"E102", "Ahmed", "Finance"});
+        employees1.add(new String[]{"E103", "John", "Marketing"});
 
+// Display existing employees before POST operation
+        System.out.println("\n--- Existing Employees ---");
+        for (String[] emp : employees1) {
+            System.out.println("  - " + emp[0] + " → " + emp[1] + " → " + emp[2]);
+        }
+        System.out.println("--------------------------");
+    }
 }
