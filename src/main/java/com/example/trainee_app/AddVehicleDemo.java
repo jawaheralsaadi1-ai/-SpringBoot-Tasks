@@ -9,6 +9,13 @@ public class AddVehicleDemo {
         manager1.displayVehicles();
         System.out.println("-------------------------");
 
+        // New vehicle to add
+        Vehicle newVehicle1 = new Vehicle("V104", "Kia Sportage", 30);
+        System.out.println("\nNew Vehicle : "
+                + newVehicle1.getVehicleId()
+                + " → " + newVehicle1.getVehicleModel()
+                + " → " + newVehicle1.getRentalPricePerDay() + " OMR/day");
+
 
     }
 }
