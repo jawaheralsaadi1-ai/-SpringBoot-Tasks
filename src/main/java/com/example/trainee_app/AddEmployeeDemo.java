@@ -49,5 +49,12 @@ public class AddEmployeeDemo {
             System.out.println("\nEmployee ID already exists.");
             System.out.println("No employee was created.");
         }
+
+        // Display updated employee list after POST operation
+        System.out.println("\n--- Final Employee List ---");
+        for (String[] emp : employees1) {
+            System.out.println("  - " + emp[0] + " → " + emp[1] + " → " + emp[2]);
+        }
+        System.out.println("-----------------------------");
     }
 }
