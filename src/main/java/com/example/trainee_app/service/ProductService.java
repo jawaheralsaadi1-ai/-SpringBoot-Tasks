@@ -34,7 +34,7 @@ public class ProductService {
     }
 
     // UPDATE STOCK
-    public Product updateStock(Long id) {
+    public Product updateStock(Long id, int quantity) {
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Product not found with id: " + id));
        // product.setStockQuantity(quantity);
