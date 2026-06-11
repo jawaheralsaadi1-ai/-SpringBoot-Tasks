@@ -1,33 +1,49 @@
 package com.example.trainee_app.controller;
 
-
 import com.example.trainee_app.entities.Student;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.trainee_app.service.StudentService;
+import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@RequestMapping("/students")
 public class StudentController {
 
-    //  Create Student object
-    private Student student = new Student(101, "Ahmed", "A");
+    private final StudentService studentService;
 
-    //  PUT endpoint at /update-student
-    @PutMapping("/updateStudent")
-    public String updateStudent(@RequestParam String name) {
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
 
-        // Retrieve current value before update
-        String previousName = student.getStudentName();
+    @PostMapping
+    public ResponseEntity<Student> create(@Valid @RequestBody Student student) {
+        return ResponseEntity.ok(studentService.createStudent(student));
+    }
 
+    @GetMapping
+    public ResponseEntity<List<Student>> getAll() {
+        return ResponseEntity.ok(studentService.getAllStudents());
+    }
 
-        // Update the field using setter method
-        student.setStudentName(name);
+    @GetMapping("/{id}")
+    public ResponseEntity<Student> getById(@PathVariable Long id) {
+        return studentService.getStudentById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 
-        // Return confirmation response
-        return "Student name updated successfully.\n"
-                + "Previous Name : " + previousName + "\n"
-                + "New Name      : " + student.getStudentName();
+    @PutMapping("/{id}")
+    public ResponseEntity<Student> update(@PathVariable Long id,
+                                          @Valid @RequestBody Student student) {
+        return ResponseEntity.ok(studentService.updateStudent(id, student));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable Long id) {
+        studentService.deleteStudent(id);
+        return ResponseEntity.ok("Student deleted successfully.");
     }
 }
-
-
