@@ -1,9 +1,9 @@
-package com.example.trainee_app.demo;
+package com.example.trainee_app.service;
 
 import com.example.trainee_app.entities.Vehicle;
 import com.example.trainee_app.controller.VehicleManager;
 
-public class AddVehicleDemo {
+public class AddVehicleService {
     public static void main(String[] args) {
         VehicleManager manager1 = new VehicleManager();
 

@@ -1,4 +1,4 @@
-package com.example.trainee_app.demo;
+package com.example.trainee_app.service;
 
 
 

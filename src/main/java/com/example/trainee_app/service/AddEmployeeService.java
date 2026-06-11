@@ -1,8 +1,8 @@
-package com.example.trainee_app.demo;
+package com.example.trainee_app.service;
 
 import java.util.ArrayList;
 
-public class AddEmployeeDemo {
+public class AddEmployeeService {
     public static void main(String[] args) {
 
 //

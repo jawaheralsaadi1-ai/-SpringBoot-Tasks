@@ -1,8 +1,8 @@
-package com.example.trainee_app.demo;
+package com.example.trainee_app.service;
 
 import java.util.ArrayList;
 
-public class DeleteTaskDemo {
+public class DeleteTaskService {
     public static void main(String[] args) {
 
         // Initialize task list with sample data

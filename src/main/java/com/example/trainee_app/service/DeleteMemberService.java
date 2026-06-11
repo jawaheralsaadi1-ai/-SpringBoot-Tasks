@@ -1,8 +1,8 @@
-package com.example.trainee_app.demo;
+package com.example.trainee_app.service;
 
 import com.example.trainee_app.controller.LibraryManager;
 
-public class DeleteMemberDemo {
+public class DeleteMemberService {
     public static void main(String[] args) {
 
         LibraryManager manager1 = new LibraryManager();

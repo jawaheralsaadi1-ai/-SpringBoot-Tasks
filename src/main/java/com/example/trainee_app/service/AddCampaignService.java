@@ -1,9 +1,9 @@
-package com.example.trainee_app.demo;
+package com.example.trainee_app.service;
 
 import com.example.trainee_app.controller.CampaignManager;
 import com.example.trainee_app.entities.Campaign;
 
-public class AddCampaignDemo {
+public class AddCampaignService {
     public static void main(String[] args) {
     CampaignManager manager1 = new CampaignManager();
 
