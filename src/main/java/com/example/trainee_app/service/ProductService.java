@@ -1,42 +1,52 @@
 package com.example.trainee_app.service;
 
 import com.example.trainee_app.entities.Product;
+import com.example.trainee_app.repository.ProductRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashMap;
+import java.util.List;
+import java.util.Optional;
+
 @Service
+@Transactional
 public class ProductService {
-    // Private collection — simulates database using HashMap
-    private HashMap<Integer, Product> productMap = new HashMap<>();
 
-    // Initialize sample data
-    public ProductService() {
-        loadSampleProducts();
+    private final ProductRepository productRepository;
+
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
 
-    // Load at least 3 sample products into the map
-    private void loadSampleProducts() {
-        productMap.put(1, new Product(1, "Laptop", 500));
-        productMap.put(2, new Product(2, "Phone", 300));
-        productMap.put(3, new Product(3, "Tablet", 200));
+    // CREATE
+    public Product createProduct(Product product) {
+        return productRepository.save(product);
     }
 
-    // Core DELETE logic — checks existence then removes safely
-    public String deleteProductById(int productId) {
+    // READ ALL
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
+    }
 
-        // Check if product exists in the map
-        if (!productMap.containsKey(productId)) {
-            return "Product not found.\n"
-                    + "No deletion performed.";
+    // READ BY ID
+    public Optional<Product> getProductById(Long id) {
+        return productRepository.findById(id);
+    }
+
+    // UPDATE STOCK
+    public Product updateStock(Long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Product not found with id: " + id));
+       // product.setStockQuantity(quantity);
+        return productRepository.save(product);
+    }
+
+    // DELETE
+    public String deleteProduct(Long id) {
+        if (!productRepository.existsById(id)) {
+            throw new RuntimeException("Product not found with id: " + id);
         }
-
-        // Retrieve product name before removing
-        Product product = productMap.get(productId);
-        productMap.remove(productId);
-
-        return "Product Deleted Successfully\n"
-                + "Product ID   : " + product.getProductId() + "\n"
-                + "Product Name : " + product.getProductName() + "\n"
-                + "Status       : Removed from inventory";
+        productRepository.deleteById(id);
+        return null;
     }
 }

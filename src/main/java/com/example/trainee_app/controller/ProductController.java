@@ -15,7 +15,7 @@ public class ProductController {
     }
     // DELETE endpoint — removes product by id from inventory
     @DeleteMapping("/products/{id}")
-    public String deleteProduct(@PathVariable int id) {
-        return productService.deleteProductById(id);
+    public String deleteProduct(@PathVariable long id) {
+        return productService.deleteProduct(id);
     }
 }
