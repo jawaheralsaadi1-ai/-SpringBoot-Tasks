@@ -1,21 +1,49 @@
 package com.example.trainee_app.controller;
 
+import com.example.trainee_app.entities.Product;
 import com.example.trainee_app.service.ProductService;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@RequestMapping("/products")
 public class ProductController {
-    // Inject service layer — controller handles request/response only
+
     private final ProductService productService;
 
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
-    // DELETE endpoint — removes product by id from inventory
-    @DeleteMapping("/products/{id}")
-    public String deleteProduct(@PathVariable long id) {
-        return productService.deleteProduct(id);
+
+    @PostMapping
+    public ResponseEntity<Product> create(@Valid @RequestBody Product product) {
+        return ResponseEntity.ok(productService.createProduct(product));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Product>> getAll() {
+        return ResponseEntity.ok(productService.getAllProducts());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Product> getById(@PathVariable Long id) {
+        return productService.getProductById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/update-stock/{id}")
+    public ResponseEntity<Product> updateStock(@PathVariable Long id,
+                                               @RequestParam int quantity) {
+        return ResponseEntity.ok(productService.updateStock(id, quantity));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable Long id) {
+        productService.deleteProduct(id);
+        return ResponseEntity.ok("Product deleted successfully.");
     }
 }
