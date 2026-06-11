@@ -1,4 +1,4 @@
-package com.example.trainee_app;
+package com.example.trainee_app.entities;
 
 public class Author {
     private int id;

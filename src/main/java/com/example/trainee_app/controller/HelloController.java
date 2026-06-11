@@ -1,6 +1,6 @@
-package com.outside;
+package com.example.trainee_app.controller;
 
-import com.example.trainee_app.Trainee;
+import com.example.trainee_app.entities.Trainee;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
