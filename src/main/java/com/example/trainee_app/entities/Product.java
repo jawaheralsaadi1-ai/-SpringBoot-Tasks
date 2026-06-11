@@ -1,10 +1,23 @@
 package com.example.trainee_app.entities;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+
+@Entity
+@Table(name = "products")
 public class Product {
 
     //Declaring variables
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int    productId;
+    @NotBlank(message = "Product name is required")
+    @Column(nullable = false)
     private String productName;
+
+    @Min(value = 0, message = "price cannot be negative")
+    @Column(nullable = false)
     private double price;
 
     // Constructor (to initialize all fields)
