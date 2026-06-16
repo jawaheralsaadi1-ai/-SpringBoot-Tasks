@@ -1,4 +1,4 @@
-﻿package com.example.trainee_app.service;
+package com.example.trainee_app.service;
 
 import com.example.trainee_app.entities.Student;
 import com.example.trainee_app.repository.StudentRepository;

@@ -28,7 +28,7 @@ public class Campaign {
     @Column(nullable = false)
     private double budget;
 
-    // ── No-arg constructor required by JPA ──
+    //  No-arg constructor required by JPA
     public Campaign() {}
 
     public Campaign(String campaignId, String campaignName, String platform, double budget) {
@@ -38,14 +38,14 @@ public class Campaign {
         this.budget       = budget;
     }
 
-    // ── Getters ──
+    //  Getters
     public Long   getId()            { return id;           }
     public String getCampaignId()    { return campaignId;   }
     public String getCampaignName()  { return campaignName; }
     public String getPlatform()      { return platform;     }
     public double getBudget()        { return budget;       }
 
-    // ── Setters ──
+    //  Setters
     public void setId(Long id)                      { this.id           = id;           }
     public void setCampaignId(String campaignId)    { this.campaignId   = campaignId;   }
     public void setCampaignName(String campaignName){ this.campaignName = campaignName; }
