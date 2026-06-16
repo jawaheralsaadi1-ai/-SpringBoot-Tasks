@@ -29,12 +29,12 @@ public class ProductService {
     }
 
     // READ BY ID
-    public Optional<Product> getProductById(Long id) {
+    public Optional<Product> getProductById(int id) {
         return productRepository.findById(id);
     }
 
     // UPDATE STOCK
-    public Product updateStock(Long id, int quantity) {
+    public Product updateStock(int id, int quantity) {
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Product not found with id: " + id));
        // product.setStockQuantity(quantity);
@@ -42,7 +42,7 @@ public class ProductService {
     }
 
     // DELETE
-    public String deleteProduct(Long id) {
+    public String deleteProduct(int id) {
         if (!productRepository.existsById(id)) {
             throw new RuntimeException("Product not found with id: " + id);
         }
