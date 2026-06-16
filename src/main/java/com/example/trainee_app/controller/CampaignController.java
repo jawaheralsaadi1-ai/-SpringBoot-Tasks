@@ -15,9 +15,9 @@ import java.util.List;
 @RequestMapping("/campaigns")
 public class CampaignController {
 
-    private final AddCampaignService campaignService;
+    private  AddCampaignService campaignService;
 
-    public CampaignController(AddCampaignService campaignService) {
+    public CampaignController() {
         this.campaignService = campaignService;
     }
 
