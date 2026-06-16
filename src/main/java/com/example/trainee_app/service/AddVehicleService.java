@@ -1,32 +1,67 @@
 package com.example.trainee_app.service;
 
 import com.example.trainee_app.entities.Vehicle;
-import com.example.trainee_app.controller.VehicleManager;
+import com.example.trainee_app.repository.VehicleRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.Optional;
+
+@Service
+@Transactional
 public class AddVehicleService {
-    public static void main(String[] args) {
-        VehicleManager manager1 = new VehicleManager();
 
-// Display existing vehicles before POST operation
-        System.out.println("\n--- Existing Vehicles ---");
-        manager1.displayVehicles();
-        System.out.println("-------------------------");
+    private final VehicleRepository vehicleRepository;
 
-        // New vehicle to add
-        Vehicle newVehicle1 = new Vehicle("V104", "Kia Sportage", 30);
-        System.out.println("\nNew Vehicle : "
-                + newVehicle1.getVehicleId()
-                + " → " + newVehicle1.getVehicleModel()
-                + " → " + newVehicle1.getRentalPricePerDay() + " OMR/day");
+    public AddVehicleService(VehicleRepository vehicleRepository) {
+        this.vehicleRepository = vehicleRepository;
+    }
 
-    // Perform POST operation via manager
-        System.out.println("\n" + manager1.addVehicle(newVehicle1));
+    // ── CREATE — prevents duplicate vehicleId (business code like "V101") ──
+    public Vehicle createVehicle(Vehicle vehicle) {
+        if (vehicleRepository.existsByVehicleId(vehicle.getVehicleId())) {
+            throw new RuntimeException("Vehicle ID already exists: " + vehicle.getVehicleId());
+        }
+        return vehicleRepository.save(vehicle);
+    }
 
-        // Display updated vehicle list after POST operation
-        System.out.println("\n--- Updated Vehicle List ---");
-        manager1.displayVehicles();
-        System.out.println("----------------------------");
+    // ── READ ALL ──
+    public List<Vehicle> getAllVehicles() {
+        return vehicleRepository.findAll();
+    }
 
+    // ── READ ALL PAGED ──
+    public Page<Vehicle> getAllVehiclesPaged(Pageable pageable) {
+        return vehicleRepository.findAll(pageable);
+    }
 
+    // ── READ BY DB ID ──
+    public Optional<Vehicle> getVehicleById(Long id) {
+        return vehicleRepository.findById(id);
+    }
+
+    // ── READ BY BUSINESS CODE ──
+    public Optional<Vehicle> getVehicleByCode(String vehicleId) {
+        return vehicleRepository.findByVehicleId(vehicleId);
+    }
+
+    // ── UPDATE ──
+    public Vehicle updateVehicle(Long id, Vehicle updatedVehicle) {
+        Vehicle existing = vehicleRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Vehicle not found with id: " + id));
+        existing.setVehicleModel(updatedVehicle.getVehicleModel());
+        existing.setRentalPricePerDay(updatedVehicle.getRentalPricePerDay());
+        return vehicleRepository.save(existing);
+    }
+
+    // ── DELETE ──
+    public void deleteVehicle(Long id) {
+        if (!vehicleRepository.existsById(id)) {
+            throw new RuntimeException("Vehicle not found with id: " + id);
+        }
+        vehicleRepository.deleteById(id);
     }
 }
