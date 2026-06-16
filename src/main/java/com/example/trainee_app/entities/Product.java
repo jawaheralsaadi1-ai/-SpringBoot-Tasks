@@ -12,7 +12,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int    productId;
-    @NotBlank(message = "Product name is required")
+    @NotBlank (message = "Product name is required")
     @Column(nullable = false)
     private String productName;
 

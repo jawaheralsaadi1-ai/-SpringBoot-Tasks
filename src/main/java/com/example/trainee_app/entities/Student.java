@@ -14,9 +14,12 @@ import jakarta.validation.constraints.NotBlank;
         private int    studentId;
     @NotBlank(message = "Name is required")
     @Column(nullable = false)
+
+
         private String studentName;
     @NotBlank(message = "Grade is required")
     @Column(nullable = false)
+
         private String grade;
 
         //  Constructor
@@ -27,17 +30,9 @@ import jakarta.validation.constraints.NotBlank;
         }
 
         // Getter methods — allow safe read access from outside the class
-        public int getStudentId() {
-            return studentId;
-        }
-
-        public String getStudentName() {
-            return studentName;
-        }
-
-        public String getGrade() {
-            return grade;
-        }
+        public int getStudentId()         {return studentId;}
+        public String getStudentName()    {return studentName;}
+    public String getGrade()              {return grade;}
 
         //  Setter methods — allow controlled update access (PUT-style)
         public void setStudentName(String studentName) {

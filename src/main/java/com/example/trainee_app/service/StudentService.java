@@ -29,12 +29,12 @@ public class StudentService {
     }
 
     // READ BY ID
-    public Optional<Student> getStudentById(Long id) {
+    public Optional<Student> getStudentById(int id) {
         return studentRepository.findById(id);
     }
 
     // UPDATE
-    public Student updateStudent(Long id, Student updatedStudent) {
+    public Student updateStudent(int id, Student updatedStudent) {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
         student.setStudentName(updatedStudent.getStudentName());
@@ -43,7 +43,7 @@ public class StudentService {
     }
 
     // DELETE
-    public void deleteStudent(Long id) {
+    public void deleteStudent(int id) {
         if (!studentRepository.existsById(id)) {
             throw new RuntimeException("Student not found with id: " + id);
         }
