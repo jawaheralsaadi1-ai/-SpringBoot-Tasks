@@ -49,11 +49,4 @@ public class StudentService {
         }
         studentRepository.deleteById(id);
     }
-
-    public String getStudentName() {
-        return "";
-    }
-
-    public void setStudentName(String name) {
-    }
 }
