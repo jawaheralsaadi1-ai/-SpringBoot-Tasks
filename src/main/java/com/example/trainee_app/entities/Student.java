@@ -3,10 +3,14 @@ package com.example.trainee_app.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
 @Table(name = "students")
     public class Student {
+
+
 
         //  Declaring variables
     @Id
